@@ -34,6 +34,29 @@ app.get('/', (req, res) => {
   res.send('API Bookly-Hybrid fonctionne !');
 });
 
-app.listen(PORT, () => {
-  console.log(`Serveur démarré sur http://localhost:${PORT}`);
-});
+app.use('/api/users', require('./routes/userRoutes'));
+app.use('/api/books', require('./routes/bookRoutes'));
+app.use('/api/profiles', require('./routes/profileRoutes'));
+
+const startServer = async () => {
+  try {
+    await connectMongo();
+    
+    const client = await pgPool.connect();
+    console.log('Connexion à PostgreSQL réussie.');
+    
+    await createSqlTables();
+    client.release();
+    
+     app.listen(PORT, () => {
+      console.log(`Serveur démarré sur http://localhost:${PORT}`);
+    });
+    
+  } catch (err) {
+    console.error('Erreur fatale lors du démarrage du serveur :', err);
+    process.exit(1); 
+  }
+};
+
+
+startServer();
