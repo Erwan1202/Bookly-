@@ -1,4 +1,4 @@
-# 🚀 Analyse et Restitution : API Hybride Bookly+
+# 🚀 Analyse et Restitution : API Hybride Bookly-
 
 Ce document résume l'analyse du projet d'API hybride (SQL + NoSQL) "Bookly-".
 
