@@ -1,6 +1,6 @@
 # 🚀 Analyse et Restitution : API Hybride Bookly+
 
-Ce document résume l'analyse du projet d'API hybride (SQL + NoSQL) "Bookly+".
+Ce document résume l'analyse du projet d'API hybride (SQL + NoSQL) "Bookly-".
 
 ## 1. Ce que j'ai appris sur la complémentarité SQL/NoSQL
 
